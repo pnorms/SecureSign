@@ -61,7 +61,7 @@ namespace SecureSign.Core.Signers
 
 				if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 				{
-					if (fileExtention.Contains("ps"))
+					if ((fileExtention == null) || (fileExtention == "") || (fileExtention.Contains("ps")))
 					{
 						return await SignUsingPowerShellAsync(inputFile, certFile, password);
 					}
